@@ -6,6 +6,26 @@
         <div class="container cards">
             <h3 class="pt-4 pb-2">Food establishments near Taft</h3>
             <div class="row gy-5 js-establishments-grid">
+                <% if (establishments.length > 0) { %>
+                    <% establishments.forEach((establishment) => { %>
+                        <div class="col-lg-3">
+                            <a href="/establishments/<%= establishment.username %>">
+                                <div class="content">
+                                    <div class="img-parent"><img src="<%= establishment.profilePicture %>" alt=""></div>
+                                    <div class="mt-3">
+                                        <div class="d-flex justify-content-between">
+                                            <span class="bold"><%= establishment.displayedName %></span>
+                                            <div>
+                                                <i class="fas fa-star me-2"></i><span class="regular"><%= establishment.rating %></span>
+                                            </div>
+                                        </div>
+                                        <span class="subtext"><%= establishment.tag1 %><br><%= establishment.tag2 %></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <% }); %>
+                <% } %>                
             </div>
         </div>
     </body>
