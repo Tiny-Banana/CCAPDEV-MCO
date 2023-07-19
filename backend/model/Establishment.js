@@ -3,7 +3,15 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const establishmentSchema = new Schema({
-    title: {
+    username: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    displayedName: {
         type: String,
         required: true
     },
@@ -11,7 +19,23 @@ const establishmentSchema = new Schema({
         type: Number,
         required: true
     },
+    numReviews: {
+        type: Number,
+        required: true
+    },
     description: {
+        type: String,
+        required: true
+    },
+    profilePicture: {
+        type: String,
+        required: true
+    }, 
+    tag1: {
+        type: String,
+        required: true
+    },
+    tag2: {
         type: String,
         required: true
     }
