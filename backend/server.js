@@ -1,7 +1,11 @@
+require('dotenv').config()
 const {connectToDb, getDb} = require('./db')
 const mongoose = require('mongoose')
 const express = require('express')
-const establishmentRoutes = require('./controller/routes/establishment')
+const cookieParser = require('cookie-parser')
+const establishmentRoutes = require('./routes/establishment')
+const userRoutes = require('./routes/user')
+const { requireAuth, checkUser } = require('./middleware/authMiddleware')
 
 //app 
 const app = express() 
@@ -19,15 +23,18 @@ connectToDb((err) => {
 app.set('view engine', 'ejs')
 
 //middleware
-app.use(express.json()) //to access req body
+app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser())
+// app.use(express.json())
 app.use(express.static('public'))
 
 //routes 
+app.get('*', checkUser)
 app.get('/', (req, res) => {
     res.redirect('/establishments')
 })  
- 
 app.use('/establishments', establishmentRoutes) 
+app.use('/user', userRoutes)
+ 
 
-
-   
+      
