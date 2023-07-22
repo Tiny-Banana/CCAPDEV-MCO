@@ -1,3 +1,7 @@
+body {
+  background: white;
+}
+
 .img-parent {
     border-radius: 15px;
     width: 100%;
@@ -26,3 +30,6 @@
     color: inherit;
   }
   
+  .container {
+    margin-left: 108px;
+  }

@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
 
 body {
   font-family: "Montserrat", sans-serif;
+  background: #fafafa;
 }
 
 .floating-nav {
@@ -41,4 +42,176 @@ nav img {
 .navbar-nav {
   justify-content: flex-end;
   width: 15%;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.regular {
+  font-weight: 500;
+}
+
+.subtext {
+  color: #717171;
+}
+
+.auth img {
+  width: 40%;
+}
+
+.myform img,
+nav img {
+  height: 30px;
+  width: 30px;
+}
+
+.modal-content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#register .modal-content {
+  width: 90%;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.btn-close {
+  position: absolute;
+  right: 0;
+  padding: 1em;
+}
+
+.auth h1,
+.auth h2 {
+  font-weight: bold;
+}
+
+.auth h1 {
+  font-size: 2.3em;
+}
+
+.auth h2 {
+  font-size: 1.7em;
+}
+
+.auth .form-control:focus {
+  box-shadow: none;
+  border: 2px solid #198754;
+}
+
+.auth .btn {
+  width: 50%;
+  display: block;
+  margin: auto;
+  font-weight: 800;
+  background-color: #198754;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.5em 0;
+}
+
+.myform .btn:hover {
+  background-color: inherit;
+  color: #198754;
+  border-color: #198754;
+}
+
+.auth p {
+  text-align: center;
+  margin: 0px;
+}
+
+.caption {
+  font-size: 15px;
+}
+
+.auth p a {
+  color: rgb(37, 37, 37);
+  text-decoration: none;
+}
+
+.auth p a:hover {
+  color: #198754;
+}
+
+.auth-container-login, .auth-container-signup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 5%;
+  box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+}
+
+.auth-container-login {
+  width: 30%;
+  height: 75%;
+}
+
+.auth-container-signup {
+  width: 40%;
+  height: 80%;
+}
+
+.auth-container-login .auth-content {
+  position: absolute;
+  transform: translate(18%, 10%);
+  width: 75%;
+}
+
+.auth-container-signup .auth-content {
+  position: absolute;
+  transform: translate(17.5%, 7%);
+  width: 75%;
+}
+
+.register-intro {
+  width: 72%;
+}
+
+.user-img,
+#pfp-input,
+.pfp {
+  border-radius: 50%;
+}
+
+.user-img,
+#pfp-input {
+  height: 80px;
+  width: 80px;
+  align-self: flex-end;
+}
+
+#uploadbtn {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  padding: 2.5px 7.5px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  background-color: #198754;
+  transform: translate(-80%, 150%);
+}
+
+#uploadbtn i {
+  position: absolute;
+  transform: translate(0%, 30%);
+}
+
+#file {
+  display: none;
+}
+
+input[type="checkbox"] {
+  accent-color: #198754;
+} 
+
+.nav-name {
+  font-family: 'Belanosima', sans-serif;
 }
