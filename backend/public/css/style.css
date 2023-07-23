@@ -215,3 +215,7 @@ input[type="checkbox"] {
 .nav-name {
   font-family: 'Belanosima', sans-serif;
 }
+
+.error {
+  color: #ff0099;
+}
