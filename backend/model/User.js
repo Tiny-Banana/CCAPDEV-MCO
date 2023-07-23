@@ -22,29 +22,28 @@ const userSchema = new Schema({
     }
 })
 
-userSchema.statics.signup = async function (currUser) {
-    const exists = await this.findOne({username: currUser["username-reg"]})
+userSchema.statics.signup = async function (username , password, description, pfp) {
+    const exists = await this.findOne({username})
 
     if (exists) {
-        throw Error('Username already in use')
-        //error checking modal
+        throw Error('username already in use');
     }
     // if (!validator.isStrongPassword(password)) {
     //     throw Error('Password is not strong enough')
     // }
-
+ 
     const salt = await bcrypt.genSalt(10)
-    const hash = await bcrypt.hash(currUser["password-reg"], salt)
+    const hash = await bcrypt.hash(password, salt)
 
-    const user = this.create({username: currUser["username-reg"], password: hash, description: currUser["about-you-reg"], pfp: currUser.pfp})
+    const user = await this.create({username, password: hash, description, pfp})
     return user
 } 
 
-userSchema.statics.login = async function (currUser) {
-    const user = await this.findOne({username: currUser["username-login"]})
+userSchema.statics.login = async function (username, password) {
+    const user = await this.findOne({username})
     
     if (user) {
-        const auth = await bcrypt.compare(currUser["password-login"], user.password)
+        const auth = await bcrypt.compare(password, user.password)
         if (auth) {
              return user
         } else {
