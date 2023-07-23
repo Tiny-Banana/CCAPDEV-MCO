@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const establishmentRoutes = require('./routes/establishment')
 const userRoutes = require('./routes/user')
 const { requireAuth, checkUser } = require('./middleware/authMiddleware')
+const upload = require('./routes/upload')
 
 //app 
 const app = express() 
@@ -25,7 +26,7 @@ app.set('view engine', 'ejs')
 //middleware
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
-// app.use(express.json())
+app.use(express.json())
 app.use(express.static('public'))
 
 //routes 
@@ -33,6 +34,7 @@ app.get('*', checkUser)
 app.get('/', (req, res) => {
     res.redirect('/establishments')
 })  
+app.use(upload)
 app.use('/establishments', establishmentRoutes) 
 app.use('/user', userRoutes)
  
